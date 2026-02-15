@@ -1,75 +1,87 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Xman Search</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xman Search</title>
 
-    <!-- Google CSE -->
-    <script async src="https://cse.google.com/cse.js?cx=a6847e282367e402e"></script>
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    overflow: hidden;
+    color: white;
+}
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            color: white;
-        }
+.container {
+    text-align: center;
+    animation: fadeIn 1.5s ease;
+}
 
-        .container {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 40px;
-            border-radius: 20px;
-            backdrop-filter: blur(15px);
-            box-shadow: 0 0 30px rgba(0,0,0,0.4);
-            width: 90%;
-            max-width: 600px;
-        }
+h1 {
+    font-size: 48px;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
 
-        h1 {
-            margin-bottom: 20px;
-            font-size: 28px;
-        }
+.search-box {
+    display: flex;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(20px);
+    border-radius: 50px;
+    padding: 10px;
+    width: 500px;
+    max-width: 90vw;
+    box-shadow: 0 0 40px rgba(0,0,0,0.4);
+}
 
-        .gcse-search {
-            margin-top: 20px;
-        }
+.search-box input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    outline: none;
+}
 
-        footer {
-            margin-top: 30px;
-            font-size: 12px;
-            opacity: 0.6;
-        }
-    </style>
+.search-box button {
+    border: none;
+    background: #00f2ff;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.search-box button:hover {
+    background: white;
+}
+
+@keyframes fadeIn {
+    from {opacity:0; transform: translateY(20px);}
+    to {opacity:1; transform: translateY(0);}
+}
+</style>
 </head>
 
 <body>
 
-    <div class="container">
-        <h1>🔍 Xman Search</h1>
+<div class="container">
+    <h1>⚡ Xman Search</h1>
 
-        <div class="gcse-search"></div>
-
-        <footer>
-            Powered by Google Custom Search
-        </footer>
-    </div>
-
-    <script>
-        console.log("Xman Search chargé 🚀");
-
-        // Petit effet dynamique
-        document.addEventListener("mousemove", (e) => {
-            const x = (e.clientX / window.innerWidth) * 20;
-            const y = (e.clientY / window.innerHeight) * 20;
-            document.body.style.backgroundPosition = `${x}px ${y}px`;
-        });
-    </script>
+    <form class="search-box" action="search.html">
+        <input type="text" name="q" placeholder="Rechercher..." required>
+        <button type="submit">Search</button>
+    </form>
+</div>
 
 </body>
 </html>
